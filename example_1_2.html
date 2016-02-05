@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+		Ejemplo 1.2. jQuery: metodo appendTo()
+		</title>
+		
+	</head>
+	<body>
+		<!-- Inicialmente tenemos el cuerpo HTML vacio -->
+		
+		<!-- Usamos jQuery para adicionarle un anchorlink al cuerpo  -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		Semantica de jQuery
+		
+		En el ejemplo, la funcion toma el elemento <a> y lo añade dentro de la estructura HTML de otro 
+		 
+		Metodos:
+		.appendTo('elementoHTML') = Manipula un elemento HTML y lo ubica dentro de la estructura HTML de otro
+		
+		Resultado:
+		<body>
+			<a href="http://www.jquery.com">jQuery</a>
+		>
+		*/
+		
+		jQuery('<a>jQuery</a>').attr('href', 'http://www.jquery.com').appendTo('body');
+		
+		</script>
+		
+	</body>
+</html>

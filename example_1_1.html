@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+		Ejemplo 1.1. Usando jQuery para seleccionar un elemento del DOM
+		</title>
+		<!-- Inicialmente tenemos un anchorlink vacio -->
+	</head>
+	<body>
+		
+		<!-- Inicialmente tenemos un anchorlink vacio -->
+		<a href=""></a>
+		
+		<!-- Usamos jQuery para adicionarle a las propiedades del anchorlink el enlace
+			 a la pagina principal de jQuery <a href="http://www.jquery.com">.</a> 
+			 -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		Semantica de jQuery
+		
+		Funcion: jQuery(), Alias: $()
+		jQuery es una funcion constructora que se usa para crear una instancia de un objeto jQuery.
+		
+		jQuery collection o wrapper set
+		jQuery encapsula los elementos del DOM dentro de los metodos jQuery.
+		Este termino hace referencia a los elementos seleccionados usando la funcion jQuery
+		
+		En el ejemplo, la funcion encapsula todos los elementos relacionados con el elemento anchorlink <a>
+		 
+		Metodos:
+		.text('texto a mostrar') 			= Incorpora contenido visible tipo texto al elemento HTML
+		.attr('nombre_atributo','valor')	= Incorpora a un atributo un valor
+		
+		Resultado:
+		<a href="http://www.jquery.com">jQuery</a>
+		
+		*/
+		
+		jQuery('a').text('jQuery').attr('href', 'http://www.jquery.com');
+		
+		</script>
+		
+	</body>
+</html>
