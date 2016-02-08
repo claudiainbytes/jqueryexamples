@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+		Ejemplo 1.3. jQuery: evento ready(function(){})
+		</title>
+		
+	</head>
+	<body>
+		<!-- Inicialmente tenemos el cuerpo HTML vacio -->
+
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: el evento ready()
+
+		.ready() 
+		Es un evento que jquery dispara cuando todos los elementos del DOM estan cargados y 
+		disponibles para ser manipulados.
+
+		El codigo que se manipula en el DOM puede ejecutarse en un controlador(handler) para este evento. Es
+		un patron comun visto en el uso de jQuery.
+
+		Es importante saber que puedes colocar tantos eventos ready() que puedas al documento como tu desees.
+		No hay limite para incluir uno solo. Estos son ejecutados en el orden que fueron agregados.
+		
+		*/
+		
+		// Implementando .ready() de forma estandar
+		
+		jQuery(document).ready(function () { 
+											alert('DOM is ready!'); 
+										   });
+		
+		// Forma abreviada de .ready()
+		// Notese que automaticamente se hace referencia a todo el documento
+		// Y el evento no hay necesidad de implementarlo
+		// Hace lo mismo que el anterior
+		
+		jQuery(function () { 
+							alert('No really, the DOM is ready!'); 
+							jQuery('<img alt="Origami" style="width:auto;height:300px;"/>').attr('src', '/images/origami.jpg').appendTo('body');
+						   });
+		
+		// Shortcut with fail-safe usage of $. Keep in mind that a reference
+		// to the jQuery function is passed into the anonymous function.
+		// Forma abreviada incluyendo el simbolo de $ a prueba de fallos.
+		// Tenga en cuenta que una referencia a la funcion jQuery es 
+		// transladada a la función anonima
+		
+		jQuery(function ($) {
+							alert('Seriously its ready!');
+							// Use $() without fear of conflicts.
+							});
+
+		</script>
+		
+	</body>
+</html>

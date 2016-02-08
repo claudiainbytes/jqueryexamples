@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+		Ejemplo 1.4. jQuery: evento load(function(){})
+		</title>
+		
+	</head>
+	<body>
+		<!-- Inicialmente tenemos el cuerpo HTML vacio -->
+
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: el evento load()
+
+		.load() 
+		Sirve para ejecutar codigo jQuery cuando la ventana del navegador esta completamente cargada.
+		
+		Usamos el evento ready() para ejecutar codigo cuando el DOM esta cargado y disponible para ser manipulado
+
+		Usamos load() cuando ejecutamos codigo una vez toda la pagina web este completamente cargado.
+
+		Este evento se puede hacer colocando un evento que controle el objeto window.
+		load() sera usado para invocar una funcion una vez la ventana esta completamente cargada.
+
+		*/
+		
+		jQuery(window).load(function(){
+						// Permite al objeto window pasar una funcion jQuery 
+						// y pone una funcion controladora por medio de la funcion load.
+						alert('La pagina y todos sus componentes estan cargados'); 
+						jQuery('<img alt="Origami" style="width:auto;height:300px;"/>').attr('src', '/images/origami.jpg').appendTo('body');
+						});
+
+		</script>
+		
+	</body>
+</html>
