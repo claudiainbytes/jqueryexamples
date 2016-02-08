@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
+	<meta charset="UTF-8">
 		<title>
 		Ejemplo 1.4. jQuery: evento load(function(){})
+		<!-- Pagina 18 -->
 		</title>
 		
 	</head>
@@ -20,9 +22,12 @@
 		.load() 
 		Sirve para ejecutar codigo jQuery cuando la ventana del navegador esta completamente cargada.
 		
-		Usamos el evento ready() para ejecutar codigo cuando el DOM esta cargado y disponible para ser manipulado
+		Usamos el evento ready() para ejecutar codigo cuando el DOM esta cargado y disponible para ser manipulado.
+		
+		.ready() se usa si quieres conectar tus eventos para ciertos elementos antes que la ventana se cargue completamente.
 
 		Usamos load() cuando ejecutamos codigo una vez toda la pagina web este completamente cargado.
+		Este evento se ejecuta un poco mas tarde, hasta que todas las imagenes o otros assets esten cargados.
 
 		Este evento se puede hacer colocando un evento que controle el objeto window.
 		load() sera usado para invocar una funcion una vez la ventana esta completamente cargada.

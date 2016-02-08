@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.9. jQuery: aspectos de la funcion jQuery
+		<!-- Pagina 23 -->
+		</title>
+		
+	</head>
+	<body>
+	
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: Aspectos de la funcion jQuery
+		
+		La funcion jQuery es multifacetica. Podemos aprobar diferentes valores y formatos que pueden
+		usarse para mejorar el rendimiento de funciones unicas.
+		
+		Hay varios usos de la funcion jQuery:
+		
+		- Seleccionan elementos del DOM usando expresiones CSS y expresiones jQuery personalizadas, tanto como
+		  seleccionar elementos usando referencias del DOM. jQuery ('a > p') o jQuery (':first') y jQuery(document.body)
+		
+		- Crea HTML sobre la marccha, pasando estructuras HTML o metodos DOM que crean elementos DOM:
+		  jQuery('<div id="nav"></div>') o jQuery(document.createElement('div'))
+		
+		- Un atajo para el evento ready() para pasar una funcion a la funcion jQuery:
+		 jQuery(function($){ /* Shortcut for ready()  } 
+		
+		*/
+		
+		jQuery(function($){ // Pass jQuery a function.
+		
+			// Pass jQuery a string of HTML. El parrafo lo añade al contenedor body
+			$('<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>').appendTo('body');
+			
+			// Pass jQuery an element reference. Dentro del contenedor parrafo añade elemento anchorlink
+			$(document.createElement('a')).text('Enlaza a jQuery').appendTo('p');
+			
+			// Pass jQuery an element reference. Dentro del contenedor parrafo añade elemento anchorlink
+			$(document.createElement('a')).text('Otro enlace').appendTo('a');
+			
+			// Pass jQuery a CSS expression. // Puede interpretar tambien un elemento determinado dentro del DOM
+			$('a').attr('href', 'http://www.google.com');
+			
+			// Pass jQuery a CSS expression. // Puede interpretar tambien un elemento determinado dentro del DOM
+			$('a:first').attr('href', 'http://www.jquery.com');
+			
+			// Pass jQuery a DOM reference. // 
+			$(document.anchors[0]).attr('jQuery');
+		});
+		
+		</script>
+		
+	</body>
+</html>

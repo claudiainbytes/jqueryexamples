@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.7. jQuery: rompiendo metodos encadenados con metodos destructivos
+		<!-- Pagina 21 -->
+		</title>
+		
+	</head>
+	<body>
+		<p></p>
+
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery rompiendo metodos encadenados con metodos destructivos
+		
+		No todos los metodos jQuery pueden mantenerse en la cadena.
+		Los metodos como text() pueden ser encadenados cuando son usados para configurar el nodo de un elemento.
+		
+		Sin embargo, text() actualmente se rompe con la cadena cuando se usa para obtener el nodo del texto que esta
+		contenido dentro de un elemento.
+		
+		A continuacion, text() es usado para configurar y obtener el texto contenido dentro del elemento <p>
+		
+		Obteniedo el texto contenido dentro de un elemento usando text() es el principal ejemplo de una cadena rota
+		por que el metodo retornara una cadena que contiene el nodo texto, pero no el objeto jQuery encadenado.
+		
+		No deberia ser sorpresa que si un metodo jQuery no retorna todo el envoltorio, la cadena es de este modo rota.
+		Este metodo se considera destructivo.
+		*/
+		
+		(function ($) {
+				var theText = $('p').text('He left the cat out of the bag').text(); 
+				// Observese que el metodo se rompe en la cadena, si el proximo metodo 
+				// es text() sin contenido
+				// Retorna el texto, mas no el objeto jQuery
+				alert(theText);
+		})(jQuery)
+
+		</script>
+		
+	</body>
+</html>

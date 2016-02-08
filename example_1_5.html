@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.5. jQuery: scripts JS al final sin usar ready()
+		<!-- Pagina 19 -->
+		</title>
+		
+	</head>
+	<body>
+		<!-- Inicialmente tenemos un parrafo -->
+		<p> Soy el DOM! Script al final!</p>
+
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery reglas generales
+		1. CSS deben incluirse antes de cargar la libreria jquery/jquery
+		2. El script de la libreria jQuery debe estar hospedado dentro del proyecto web
+		3. Scripts JS deben estar antes de la etiqueta de cierre del </body> para que la pagina se cargue rapidamente
+		
+		El evento ready() no es totalmente necesario. Si tu codigo JS no afecta el DOM, puedes incluir el JS en cualquier lugar en el 
+		documento HTML. Quiere decir, que puedes evitar el evento ready() si tu JS no depende del DOM.
+
+		La mayoria de los navegadores tienen la capacidad de parsear totalemnte el DOM en el orden como operan los elementos.
+		
+		Para evitar usar el evento ready() para programar todo lo que opera en el DOM, simplemente reemplaza tu codigo en un 
+		documento HTML antes de cerrar la etiqueta </body>. Esto asegura que el DOM esta completamente cargado, simplemente por que el
+		navegador  parseara el documento del inicio hasta el final. Si reemplazas tu JS en el documento despues de que los elementos DOM
+		se manipulen, no hay necesidad de usar el evento ready().
+		
+		A continuacion, se coloca el script antes de la etiqueta body. Esta tecnica siempre se usará en todos los proyectos web como
+		buena practica y mejor performance.
+		
+		Si ubico <script> antes del elemento <p>, al ejecutarse la pagina en el navegador el script no encontrara el elemento <p> pues aun 
+		no se ha cargado ese elemento. Puede funcionar siempre y cuando al script se encapsule dentro del evento .ready().
+	
+		*/
+		
+			alert(jQuery('p').text()); 
+
+		</script>
+		
+	</body>
+</html>

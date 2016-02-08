@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.6. jQuery: encadenando metodos
+		<!-- Pagina 20 -->
+		</title>
+		
+	</head>
+	<body>
+		<!-- Inicialmente tenemos un anchorlink vacio -->
+		<a></a>
+
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery encadenando metodos
+		
+		Se puede encadenar metodos jQuery asociados a elementos del DOM que estan contenidos dentro del set.
+		Cada metodo enlazado en la cadena siempre retornara algo que será usado para el proximo metodo.
+		
+		Nota: en jQuery la mayoria de metodos son encadenables pero no todos.
+		
+		Siempre se deberia intentar reutilizar los metodos que estan encadenados. 
+		
+		En el ejemplo, text(), attr() y addClass() estan encadenados.
+	
+		*/
+		
+			(function ($) {
+				$('a').text('Página de jQuery') //Añade texto al contenido del anchorlink
+					  .attr('href', 'http://www.jquery.com/') //En el atributo href, configuramos la URL
+                      .addClass('jQuery'); // Añadimos una clase al anchorlink
+            })(jQuery) 
+
+		</script>
+		
+	</body>
+</html>

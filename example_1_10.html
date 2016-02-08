@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.10. 
+		<!-- Pagina 23 -->
+		</title>
+		
+	</head>
+	<body>
+		
+		<a id="link1">jQuery.com</a>
+		<a id="link2">jQuery.com</a>
+		<a id="link3">jQuery.com</a>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: 
+		
+		
+		
+		*/
+		
+		(function ($){
+			$('a').mouseenter( function () { alert(this.id); });
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

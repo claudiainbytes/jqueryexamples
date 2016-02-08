@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
+	<meta charset="UTF-8">
 		<title>
 		Ejemplo 1.3. jQuery: evento ready(function(){})
+		<!-- Pagina 17 -->
 		</title>
 		
 	</head>
@@ -19,7 +21,9 @@
 
 		.ready() 
 		Es un evento que jquery dispara cuando todos los elementos del DOM estan cargados y 
-		disponibles para ser manipulados.
+		disponibles para ser manipulados. Cuando se cargue la ventana completamente usamos .load()
+		
+		Puedo acceder a un elemento del DOM así este no este cargado completamente(ejemplo imagenes). 
 
 		El codigo que se manipula en el DOM puede ejecutarse en un controlador(handler) para este evento. Es
 		un patron comun visto en el uso de jQuery.
@@ -33,6 +37,7 @@
 		
 		jQuery(document).ready(function () { 
 											alert('DOM is ready!'); 
+											jQuery('<a>Elemento jQuery Cargó 1 anchor</a></br>').attr('href', 'http://www.jquery.com').appendTo('body');
 										   });
 		
 		// Forma abreviada de .ready()
@@ -42,19 +47,28 @@
 		
 		jQuery(function () { 
 							alert('No really, the DOM is ready!'); 
-							jQuery('<img alt="Origami" style="width:auto;height:300px;"/>').attr('src', '/images/origami.jpg').appendTo('body');
+							jQuery('<a>Elemento jQuery Cargó 2 anchor</a></br>').attr('href', 'http://www.jquery.com').appendTo('body');
+							jQuery('<img alt="Origami" style="width:auto;height:300px;"/></br>').attr('src', '/images/origami.jpg').appendTo('body');
 						   });
 		
-		// Shortcut with fail-safe usage of $. Keep in mind that a reference
-		// to the jQuery function is passed into the anonymous function.
 		// Forma abreviada incluyendo el simbolo de $ a prueba de fallos.
 		// Tenga en cuenta que una referencia a la funcion jQuery es 
 		// transladada a la función anonima
 		
 		jQuery(function ($) {
 							alert('Seriously its ready!');
+							jQuery('<a>Elemento jQuery Cargó 3 anchor</a></br>').attr('href', 'http://www.jquery.com').appendTo('body');
 							// Use $() without fear of conflicts.
 							});
+		
+		// Otra forma con el simbolo $ a prueba de fallos
+		
+		(function ($) {
+							alert('Seriously its ready!');
+							jQuery('<a>Elemento jQuery Cargó 4 anchor</a></br>').attr('href', 'http://www.jquery.com').appendTo('body');
+		})(jQuery);		
+
+		// Use $() without fear of conflicts.	
 
 		</script>
 		

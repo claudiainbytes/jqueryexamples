@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.8. jQuery: metodo end() para terminar/cortar metodos destructivos
+		<!-- Pagina 22 -->
+		</title>
+		
+	</head>
+	<body>
+		<style>
+			.last{ background: orange; }
+		</style>
+		<ul id="list">
+			<li></li>
+			<li>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			</li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo end() para terminar/cortar metodos destructivos
+		
+		Los metodos jQuery que altera el set del envoltorio original del objeto jQuery seleccionado esta
+		considerados para ser destructivos.
+		
+		No se preocupe, nada es realmente destructivo o removido. Mas bien, el envoltorio antiguo es puesto en 
+		un nuevo set.
+		
+		Sin embargo, divirtiendose cambiandolos no lo hace parar una vez el envoltorio original es alterado.
+		
+		Usando el metodo end(), puede retornar cualquier cambio destructivo que hace el envoltorio original.
+		
+		*/
+		
+		(function ($) {
+				
+			$('#list') // Id de lista con envoltorio original.
+				.find('> li') //Metodo destructivo, busca elemento li
+					.filter(':last') //Metodo destructivo, filtra por el ultimo elemento
+							.addClass('last') // Al ultimo elemento de lista agreguele la clase last
+					.end() // Fin .filter(':last'). // Rompe el filtro
+					.find('ul') //Metodo destructivo, busca el elemento ul 
+						.css('background', 'pink') // A todos los elementos encapsulados en ul cambiele el color de fondo 
+						.find('li:last') //Metodo destructivo, busca el ultimo li 
+							.addClass('last') //Al ultimo elemento, agreguele la clase last, (ya no es rosa, sino naranja)
+						.end() // Fin .find('li:last') //Rompe la busqueda
+					.end() // Fin .find('ul') 
+				.end() // Fin .find('> li')
+				
+				.find('li') // Regresa al encapsulamiento original $('#list')
+					.append('Soy un &lt;li&gt;');  //A cada elemento de lista agreguele el texto
+		})(jQuery)
+		</script>
+		
+	</body>
+</html>
