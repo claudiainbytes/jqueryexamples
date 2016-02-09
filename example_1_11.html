@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.11. jQuery: metodo .each()
+		<!-- Pagina 25 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<a id="link1">jQuery.com</a>
+		<a id="link2">jQuery.com</a>
+		<a id="link3">jQuery.com</a>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo each()
+
+		.each() 
+		Es un metodo con el que se puede iterar sobre cada elemento contenido dentro del envoltorio del
+		DOM.
+		Permite acceder cada elemento del DOM individualmente, por medio del uso de la palabra clave this.
+
+		*/
+		
+		(function ($){
+
+			$('a').each(function(){
+				// Loop that alerts the id value for every <a> in the page.
+				// Recorre cada elemento y muestra un alerta con su respectivo id
+				alert($(this).attr('id')); // "this" hace referencia al elemento actual en el bucle
+			});
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

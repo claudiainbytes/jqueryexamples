@@ -3,16 +3,34 @@
 	<head>
 	<meta charset="UTF-8">
 		<title>
-		Ejemplo 1.10. 
+		Ejemplo 1.10. jQuery: this
 		<!-- Pagina 23 -->
 		</title>
 		
 	</head>
 	<body>
-		
+		<style>
+			div{
+				padding:5px;
+				border:1px solid orange;
+				color:white;
+				background-color: orange;
+				font-weight: bold;
+				font-family: Arial;
+				float: left;
+				margin-left: 10px;
+				margin-top:10px;
+			}
+		</style>
 		<a id="link1">jQuery.com</a>
 		<a id="link2">jQuery.com</a>
 		<a id="link3">jQuery.com</a>
+
+		<br>
+
+		<div id="div1">Div 1</div>
+		<div id="div2">Div 2</div>
+		<div id="div3">Div 3</div>
 		
 		<!-- jQuery -->
 		<script src="jquery/jquery.min.js"></script>
@@ -20,14 +38,37 @@
 		<script>
 		
 		/*
-		jQuery: 
+		jQuery: this
+
+		this es una palabra reservada que puede ser usada para referir un elemento del DOM que actualmente esta invocando al elemento.
+
+		El siguiente ejemplo contiene codigo que tiene un evento mouseenter personalizado por cada 
+		anchorlink en la pagina. 
 		
-		
+		El evento nativo mouseover de JS se dispara cuando el cursor entra o sale de un elemento hijo mientras que con jQuery el evento mouseenter no lo hace.
+
+		.mouseenter()
+		Evento que se dispara cuando el cursor ingresa a una zona.
+
+		.each() 
+		Es un metodo con el que se puede iterar sobre cada elemento contenido dentro del envoltorio del
+		DOM.
+		Permite acceder cada elemento del DOM individualmente, por medio del uso de la palabra clave this.
 		
 		*/
 		
 		(function ($){
-			$('a').mouseenter( function () { alert(this.id); });
+			$('a').mouseenter( function () { alert(this.id); }); 
+			// this.id 
+			// Accede al atributo ID del elemento DOM
+			//Por cada anchorlink, se dispara el evento mouseenter mostrando alerta.
+
+
+			$('div').mouseenter( function () { alert( $(this).attr('id') ); }); 
+			// $(this).attr('id')
+			// Envuelve el elemento DOM con un objeto jQuery
+			// y luego usa attr() para acceder al valor de ID
+
 		})(jQuery);
 		
 		</script>

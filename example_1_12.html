@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.12. jQuery: metodo .each()
+		<!-- Pagina 25 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<a>jQuery.com</a>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo each()
+
+		Extracting elements from a wrapper set, using them directly without
+jQuery
+Just because you wrap jQuery functionality around an HTML element does not mean you lose
+access to the actual DOM element itself. You can always extract an element from the wrapper
+set and operate on the element via native JavaScript. For example, in the code below I am
+setting the title attribute of the <a> element in the HTML page by manipulating the native title
+property of the <a> DOM element.
+
+		*/
+		
+		(function ($){
+
+			// Using DOM node properties to set the title attribute.
+			$('a').get(0).title = 'thewalkingdead.com';
+			
+			// Manipulation of DOM element using jQuery methods.
+			$('a').attr('href', 'http://www.thewalkingdead.com');
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>
