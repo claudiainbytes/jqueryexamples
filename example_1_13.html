@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.13. jQuery: metodo get() para extraer elementos
+		<!-- Pagina 27 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<a href="http://www.jquery.com" title="anchor1">jQuery1.com</a>
+		<a href="http://www.jquery.com" title="anchor2">jQuery2.com</a>
+		<a href="http://www.jquery.com" title="anchor3">jQuery3.com</a>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo get() para extraer elementos
+		
+		Podemos llamar el metodo get() sin enviarle algun parametro de tipo index.
+		Este nos devolvera todo el envoltorio del elemento DOM en un array.
+		
+		Ejemplo:
+		Para el elemento <a> se usa el array para acceder a la propiedad del titulo del tercer anchorlink del DOM.
+		
+		Nota:
+		Usando get() terminará el encadenamiento en jQuery. Esto tomara el envoltorio y lo cambiara dentro de un 
+		simple array o elementos DOM que no estaran envueltos con la funcionalidad de jQuery.
+		
+		Por lo tanto, usando el metodo .end() no se podra restaurar el encadenamiento despues del metodo .get()
+		
+		*/
+		
+		(function ($){
+
+			var arrayOfAnchors = $('a').get(); // Crea un array nativo desde el envoltorio
+			alert(arrayOfAnchors[2].title); // Muestra mensaje de alerta en el tercer link
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

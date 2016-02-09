@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="UTF-8">
 		<title>
-		Ejemplo 1.12. jQuery: metodo .each()
+		Ejemplo 1.12. jQuery: extraer elementos del envoltorio sin jQuery
 		<!-- Pagina 25 -->
 		</title>
 		
@@ -18,24 +18,35 @@
 		<script>
 		
 		/*
-		jQuery: metodo each()
+		jQuery: extraer elementos del envoltorio sin jQuery
 
-		Extracting elements from a wrapper set, using them directly without
-jQuery
-Just because you wrap jQuery functionality around an HTML element does not mean you lose
-access to the actual DOM element itself. You can always extract an element from the wrapper
-set and operate on the element via native JavaScript. For example, in the code below I am
-setting the title attribute of the <a> element in the HTML page by manipulating the native title
-property of the <a> DOM element.
+		De forma nativa se puede extraer y operar sobre el elemento. 
+	
+		En el codigo de ejemplo, se configura el titulo del atributo del <a> en la pagina HTML 
+		manipulando la propiedad del titulo de <a> de forma nativa con JavaScript.
+		
+		.get()
+		Metodo que acede a los elementos del DOM en un indice especifico dentro del envoltorio.
+		
+		Se puede evitar el uso de .get() usando corchetes [] . Ejemplo:
+		
+		Notacion 1: Invoca un metodo con parametro. Lento
+		
+		$('a').get(0).title = 'jQuery.com';
+
+		Notacion 2: Es rapida, recupera el elemento directamente del array.
+		
+		$('a')[0].title = 'jQuery.com';
+		
 
 		*/
 		
 		(function ($){
 
-			// Using DOM node properties to set the title attribute.
+			// Usando las propiedades del nodo DOM para configurar el atributo titulo.
 			$('a').get(0).title = 'thewalkingdead.com';
 			
-			// Manipulation of DOM element using jQuery methods.
+			// Manipulando el elemento DOM usando metodos jQuery
 			$('a').attr('href', 'http://www.thewalkingdead.com');
 
 		})(jQuery);
