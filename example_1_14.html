@@ -21,20 +21,16 @@
 		jQuery: verificar si el envoltorio esta vacio
 		
 		Verifica si el envoltorio esta vacio. Antes de empezar a operar en un envoltorio, es logico verificar lo que contiene,
-		de hecho 
+		de hecho, seleccionar algo. La solucion mas simple es usar una sentencia if para verificar si el envoltorio esta contenido
+		en cualquier elemento del DOM.
 		
-		Checking to see if the wrapper set is empty
-Before you begin to operate on a wrapper set, it is logical to check that you have, in fact,
-selected something. The simplest solution is to use an if statement to check if the wrapper set
-contains any DOM elements.
+		El uso de sentencias if no es relevante pero si es una buena practica usarlos, 
+		a pesar que jQuery envia un mensaje silencioso en el que estos elementos no se encontraron.
+		Sin embargo, cada metodo encadenado a cualquier envoltorio vacio permanece invocado. 
+		
+		Invocar metodos desde un envoltorio vacio podria causar un procesamiento innecesario, asi como resultados indeseables
+		si los metodos retornan valores distintos que los contenidos del envoltorio, y estos valores son accionados. 
 
-
-The truth of the matter is the above if statements are not totally necessary, because jQuery will
-fail silently if no elements are found. However, each method chained to any empty wrapper set
-still gets invoked. So while we could actually forgo the use of the if statements, it is likely a
-good rule of thumb to use them. Invoking methods on an empty wrapper set could potentially
-cause unnecessary processing, as well as undesirable results if methods return values other
-than the wrapper set, and those values are acted upon.
 		
 		*/
 		

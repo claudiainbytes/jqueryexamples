@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.15. jQuery: Creando un alias renombrando el objeto jQuery por si mismo
+
+		<!-- Pagina 28 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<div>Syncfusion., Inc.</div>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: jQuery.noConflict()
+		
+		jQuery.noConflict()
+		Metodo que tiene la habilidad de reemplazar el simbolo $ con otro alias.
+		Esto es muy util en tres formas:
+		- Puede renunciar al uso de $ registrando otra libreria.
+		- Puede evitar conflictos potenciales
+		- Provee habilidad de personalizar el namespace/alias del objeto jQuery
+		
+		Para el ejemplo, estaria bien personalizar jQuery que en vez de tener que usar jQuery('div').show() or
+		$('div').show() puedes usar XYZ('div').show() 
+		
+		Nota:
+		Pasando un valor booleano verdadero a la funcion noConflict(), puedes completamente deshacer lo que 
+		jQuery ha introducido en la pagina web. Deberia solo ser usado en caso extremos por que puede causar problemas con plugins de jQuery
+
+		*/
+		
+		(function ($){
+
+			var Syncfusion = jQuery.noConflict(); //Creamos la variable que funcionara como alias
+			
+			alert(Syncfusion("div").text()); //Usamos el alias para personalizar jQuery
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>
