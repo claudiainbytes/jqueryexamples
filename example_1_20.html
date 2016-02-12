@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.20. determinando el contexto de la funcion jQuery
+		<!-- Pagina 32 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<div>
+			<div>
+				<div id="context"><a href="#">jQuery</a> </div>
+			</div>
+		</div>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: determinando el contexto de la funcion jQuery
+		
+		El contexto por defecto usado por la funcion jQuery cuando se selecciona elementos del DOM 
+		es el elemento document(e.g. $('a', document)). Esto significa que si no suministra la funcion jQuery
+		(e.g. jQuery()) con un segundo parametro para ser usado como el contexto por la consulta DOM,
+		el contexto por defecto usado es el elemento document comunmente conocido como <body>
+	
+		*/
+		
+		(function ($){
+
+			// Alerta un "objeto HTMLDocument" en Firefox
+			// Asi como $('a', document).context; .context es una propiedad jQuery descontinuada
+			alert($('a').context);
+			// Alerta un "object HTMLDivElement" en Firefox
+			alert($('a', $('#context')[0]).context);
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.21. jQuery: determinando el contexto de la funcion jQuery
+		<!-- Pagina 32 -->
+		</title>
+		
+	</head>
+	<body>
+	
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: Creando toda la estructura del DOM, incluyendo eventos del DOM, en una sola cadena.
+		
+		Aprovechando el encadenamiento de metodos de jQuery, se puede crear no solo un elemento DOM, sino
+		una estructura DOM completa. En el ejemplo se crea una lista desordenada de enlaces con jQuery que luego se agregan
+		al DOM.
+		
+		Crea  una lista desordenada con dos hipervinculos.
+		Al primer hipervinculo agregarle un valor al href
+		Al segundo hipervinculo agregarle otro valor al href
+		Cuando haga clic mostrar un cuadro de mensaje de confirmacion llamado "Leave this page?"
+		
+		Metodos:
+		
+		.append() Coloca un elemento hijo que esta contenido en un elemento padre, siempre y cuando se envie como parametro el elemento hijo
+		.find() Busca un elemento html o por su selector o pseudoselector
+		.end() Finaliza o rompe un encadenamiento
+		.appendTo() Coloca un elemento hijo que esta contenido en un elemento padre, siempre y cuando se haga referencia al elemento padre
+		*/
+		
+		(function ($){
+
+			jQuery('<ul></ul>')
+				.append('<li><a>jQuery.com</a></li><li><a>jQuery Documentation</a></li>')
+					.find('a:first')
+						.attr('href', 'http://www.jquery.com')
+					.end()
+					.find('a:eq(1)')
+						.attr('href', 'http://docs.jquery.com')
+					.end()
+					.find('a')
+						.click(function () { return confirm('Leave this page?'); })
+					.end()
+				.appendTo('body');
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.18. jQuery: metodo .each()
+		<!-- Pagina 29 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<div id="div1">I am a div</div>
+		<div id="div2">I am a div</div>
+		<div id="div3">I am a div</div>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo .each()
+		
+		A continuacion, el envoltorio contiene elementos <div> en la pagina, pero el metodo attr()
+		solo retorna el valor del id del primer elemento contenido en el envoltorio.
+		
+		Para este ejemplo, la meta es obtener el valor del atributo id para cada elemento en la pagina.
+		Podria escribir tres sentencias jQuery por separado para acceder a cada elemento <div> y su respectivo atributo id.
+		Lo anterior no parece una buena practica, lo mejor es usar un bucle sobre el envoltorio y extraer el valor del atributo id
+		de cada elemento <div>.
+		
+		Metodo .each()
+		Permite realizar iteracciones cuando nuestro envoltorio requiere una iteraccion explicita para manipular
+		varios elementos.
+		
+		Para el codigo del ejemplo, usamos el metodo .each() para iterar sobre el envoltorio, accediendo a cada elemento de set y 
+		extrayendo sus valores.
+		
+		NOTA:
+		jQuery tiene una funcion llamada $.each que no se parece en nada a $().each().
+		$.each se usa especificamente para iterar sobre un array o objeto Javascript. 
+		Esto es un substituto para iteracciones con JS nativo.
+		
+		*/
+		
+		(function ($){
+
+			// 3 alerts, one for each div. 3 Alertas, una por cada <div>
+			$('div').each(function(){
+				// Hacemos referencia a cada elemento que se itera por medio de "this"
+				alert($(this).attr('id'));
+				// Tambien podemos escribir alert(this.id);
+			});
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

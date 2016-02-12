@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.19. jQuery: orden de elementos en el envoltorio jQuery
+		<!-- Pagina 31 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: 
+		
+		Los elementos del envoltorio en jQuery son devueltos en el orden del documento  
+		
+		El motor de selector de elementos, retornara los resultados en el orden del documento
+		en comparacion con el orden en el cual los selectores fueron enviados. 
+		
+		El envoltorio sera poblado con los elementos seleccionados basados en el orden de cada
+		elemento que aparece en el documento, de arriba a abajo.
+	
+		*/
+		
+		(function ($){
+
+			// Colocamos h3 primero, luego h1 aparece de primer lugar en el documento, por que 
+			// siempre es el primero en el envoltorio
+			alert($('h3, h2, h1').get(0).nodeName);
+			// Alerts "H1".
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>

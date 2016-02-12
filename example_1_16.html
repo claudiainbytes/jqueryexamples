@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="UTF-8">
 		<title>
-		Ejemplo 1.16. jQuery: metodo .each() cuando la iteraccion no es suficiente
+		Ejemplo 1.16. jQuery: iteraccion implicita
 
 		<!-- Pagina 29 -->
 		</title>
@@ -21,29 +21,21 @@
 		<script>
 		
 		/*
-		jQuery: .each() cuando la iteraccion no es suficiente
+		jQuery: iteraccion implicita
 		
 		Para el ejemplo, se itera con tres <div>, imprimiendo dentro de su contenido "I am a div".
 		
-		La iteracion con .each() es implicita y bastante practica pues en jQuery los metodos aplicarian una iteracion implicita.
-		Sin embargo, otros metodos aplicaran para el primer elemento del envoltorio. Por ejemplo, el metodo attr() solo
-		se accede al primer elemento en el envoltorio cuando se usa para obtener un valor de un atributo.
+		La iteracion implicita, es una tecnica de jQuery que permite iterar sobre los elementos que tienen una particularidad en comun.
 		
-		Esto se considera iteración implícita porque el código jQuery asume que desea manipular
-		los tres elementos , que requiere iterar sobre los elementos seleccionados y establecer el nodo de texto
-		valor de cada < div > con el texto " Soy un div . " Cuando esto se hace por defecto , que se conoce como
-		iteración implícita.
+		Esto es superpractico, pues jQuery asume que quieres manipular los tres elementos, los cuales requiere una iteracion sobre los elementos
+        seleccionados y configurados gracias al elemento que se referencia. Esta iteracc ion implicita se hace por defecto.		
 		
-		Esto es bastante útil . En su mayor parte , la mayoría de los métodos de jQuery se aplicará implícita
-		iteración. Sin embargo , otros métodos sólo se aplicarán al primer elemento en el sistema de la envoltura . por
-		ejemplo, el método attr jQuery () sólo tendrá acceso al primer elemento en el sistema de la envoltura cuando
-		utilizado para obtener un valor de atributo .
+		Sin embargo, otros metodos solo funcionan para el primer elemento en el envoltorio. Por ejemplo, el metodo attr() solo accederá al primer	
+		elemento en el envoltorio cuando suele tener un valor de atributo.
 		
-		notas:
-		Al utilizar el método attr () para establecer un atributo , jQuery abonará efectivamente implícita
-		iteración para establecer el atributo y su valor a todos los elementos del sistema de la envoltura .
-		En el siguiente código , el sistema de la envoltura contiene todos los elementos < div > en la página , pero el attr ( )
-		método sólo devuelve el valor id del primer elemento contenido en el sistema de la envoltura .
+		NOTA:
+		Cuando usamos el metodo attr() para setear un atributo, jQuery aplicara iteraccion implicita para configurar el atributo y su valor para 
+		todos los elementos en el envoltorio.
 		
 		*/
 		

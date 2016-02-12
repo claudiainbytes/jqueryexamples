@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 1.17. jQuery: metodo .each()
+		<!-- Pagina 29 -->
+		</title>
+		
+	</head>
+	<body>
+
+		<div id="div1">I am a div</div>
+		<div id="div2">I am a div</div>
+		<div id="div3">I am a div</div>
+		
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo .each()
+		
+		A continuacion, el envoltorio contiene elementos <div> en la pagina, pero el metodo attr()
+		solo retorna el valor del id del primer elemento contenido en el envoltorio.
+		
+		*/
+		
+		(function ($){
+
+			// Alerts attribute value for first element in wrapper set.
+			alert($('div').attr('id')); // Alerts "div1".
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>
