@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+		<title>
+		Ejemplo 2.1. 	jQuery: metodo .is() , filtro :hidden , :visible
+		<!-- Pagina 32 -->
+		</title>
+		
+	</head>
+	<body>
+	
+		<div id="parentDiv" style="display: none; border:1px solid red;">
+			<div id="childDiv" style="display: block; border:1px solid green;"></div>
+		</div>
+	
+		<!-- jQuery -->
+		<script src="jquery/jquery.min.js"></script>
+		
+		<script>
+		
+		/*
+		jQuery: metodo .is() , filtro :hidden , :visible
+		
+		El ejemplo muestra dos elementos <div> embebidos, comprueba si el elemento #childDiv esta oculto con el 
+		filtro :hidden pasado como parametro en el metodo .is()
+		
+		Retorna una alerta con valor TRUE esto es por que el elemento <div> padre #parentDiv tiene como propiedad CSS display:none, afectando
+		a todos los elementos que estan contenidos como lo es #childDiv reportando un valor cero para propiedades offsetWidth y offsetHeight
+		
+		*/
+		
+		(function ($){
+
+			alert($('#childDiv').is(':hidden'));
+
+		})(jQuery);
+		
+		</script>
+		
+	</body>
+</html>
